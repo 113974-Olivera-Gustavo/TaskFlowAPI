@@ -1,0 +1,13 @@
+# Archivos y carpetas generados por Visual Studio
+*.suo
+*.user
+*.sln.docstates
+*.userprefs
+*.usertasks
+_ReSharper*/
+bin/
+obj/
+*.vs/
+*.props/
+
+.idea/

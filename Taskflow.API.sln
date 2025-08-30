@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36408.4 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taskflow.API", "Taskflow.API\Taskflow.API.csproj", "{61FC29CD-72BD-4621-AE4C-80C3141E892A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taskflow.Application", "Taskflow.Application\Taskflow.Application.csproj", "{EC41BE97-931F-40AB-9092-E0B64B89068F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taskflow.Domain", "Taskflow.Domain\Taskflow.Domain.csproj", "{9C395417-BA4F-4266-AF5C-71B2CCFA3551}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61FC29CD-72BD-4621-AE4C-80C3141E892A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61FC29CD-72BD-4621-AE4C-80C3141E892A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61FC29CD-72BD-4621-AE4C-80C3141E892A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61FC29CD-72BD-4621-AE4C-80C3141E892A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC41BE97-931F-40AB-9092-E0B64B89068F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC41BE97-931F-40AB-9092-E0B64B89068F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC41BE97-931F-40AB-9092-E0B64B89068F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC41BE97-931F-40AB-9092-E0B64B89068F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C395417-BA4F-4266-AF5C-71B2CCFA3551}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C395417-BA4F-4266-AF5C-71B2CCFA3551}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C395417-BA4F-4266-AF5C-71B2CCFA3551}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C395417-BA4F-4266-AF5C-71B2CCFA3551}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {460CA658-25AA-46B0-BE4B-413E750B42AD}
+	EndGlobalSection
+EndGlobal
