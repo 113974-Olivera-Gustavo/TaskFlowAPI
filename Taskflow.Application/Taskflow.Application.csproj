@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="AutoMapper\" />
     <Folder Include="Validations\" />
-    <Folder Include="Utilities\" />
     <Folder Include="Services\" />
     <Folder Include="Sequences\" />
     <Folder Include="ResponseDto\" />
@@ -34,6 +33,10 @@
     <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="23.9.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="9.0.4" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.14.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Taskflow.Domain\Taskflow.Domain.csproj" />
   </ItemGroup>
 
 </Project>
