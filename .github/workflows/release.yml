@@ -1,0 +1,15 @@
+name: Release
+on:
+  push:
+    branches: [ main ]
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with: { dotnet-version: '8.0.x', cache: true, cache-dependency-path: '**/*.csproj' }
+      - run: dotnet restore Taskflow.API/Taskflow.API.csproj
+      - run: dotnet publish Taskflow.API/Taskflow.API.csproj -c Release -o publish/ --no-restore
+      - uses: actions/upload-artifact@v4
+        with: { name: published-app, path: publish/ }
