@@ -2,7 +2,9 @@ name: Build and Publish
 
 on:
   push:
-    branches: [ main ]
+    branches: ['**']          # build en TODAS las ramas
+  pull_request:
+    branches: [ main ]        # checks en PR hacia main
 
 env:
   SOLUTION: Taskflow.API.sln
@@ -12,44 +14,30 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup .NET 8
-        uses: actions/setup-dotnet@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
           cache: true
           cache-dependency-path: '**/*.csproj'
+      - run: dotnet restore "$SOLUTION"
+      - run: dotnet build "$SOLUTION" -c Release --no-restore
 
-      - name: Restore
-        run: dotnet restore "$SOLUTION"
-
-      - name: Build Release
-        run: dotnet build "$SOLUTION" -c Release --no-restore
-        
   publish:
+    # Solo cuando hay push directo a main
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup .NET 8
-        uses: actions/setup-dotnet@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0.x'
           cache: true
           cache-dependency-path: '**/*.csproj'
-
-      - name: Restore (web project)
-        run: dotnet restore "$WEBPROJ"
-
-      - name: Publish (web project)
-        run: dotnet publish "$WEBPROJ" -c Release -o publish/ --no-restore
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - run: dotnet restore "$WEBPROJ"
+      - run: dotnet publish "$WEBPROJ" -c Release -o publish/ --no-restore
+      - uses: actions/upload-artifact@v4
         with:
           name: published-app
           path: publish/
